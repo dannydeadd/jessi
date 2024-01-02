@@ -10,4 +10,5 @@ body{
   --primary: #673f78;
   --secondary: #796581;
   --accent: #000000;
+  /* overflow: hidden; */
 }
