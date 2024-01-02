@@ -5,7 +5,7 @@ import Image from 'next/image'
 const Main = () => {
   return (
     <section>
-        <div className="px-12 py-32 text-center md:px-12 lg:text-left">
+        <div className="px-12 py-36 text-center md:px-12 lg:text-left">
           <div className="w-100 mx-auto sm:max-w-2xl md:max-w-3xl lg:max-w-5xl xl:max-w-7xl">
             <div className="grid items-center gap-12 lg:grid-cols-2">
               <div className="mt-12 lg:mt-0">

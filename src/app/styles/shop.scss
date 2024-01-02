@@ -1,112 +1,196 @@
-// Variables
-$bg-color: #EEE5E9;
-
-$blue-card: #92DCE5;
-$orange-card: #EF6F6C;
-$red-card: #E84855;
-$green-card: #70C1B3;
-$yellow-card: #E8DB7D;
-$pink-card: #FF386D;
-
-// Mixins
-@mixin diagBg($color) {
-  background: linear-gradient(-45deg, $color 50%, rgba(255, 255, 255, 0.5) 50%);
-}
-
-header {
-  width: 95%;
-  display: flex;
-  justify-content: flex-end;
-  flex-flow: row wrap;
-  ul {
-    padding: 1.2em 0 0.5em;
-  }
-  span {
-    padding: 0 0 0 0.5em;
-  }
-  span, i {
-    color: #2B2D42;
-  }
-  i:nth-of-type(2) {
-    cursor: pointer;
-  }
-}
-.row {
-  width: 100%;
-  justify-content: flex-start;
-  display: flex;
-  flex-flow: row wrap;
-}
-.product {
-  box-shadow: 1px 5px 15px #CCC;
-  width: 15em;
-  height: auto;
-  border-radius: 3px;
-  padding: 2em;
-  margin: 1em;
-  overflow: hidden;
-  position: relative;
-  flex: auto;
-    img {
-    max-width: 100%;
-    height: auto !important;
-    text-align: center;
-  }
-  &_inner {
-    display: flex;
-    align-items: center;
-    flex-flow: column wrap;
-    p {
-      color: rgba(255, 255, 255, 0.9);
-    }
-    button {
-      border: 1px solid rgba(255, 255, 255, 0.5);
-      color: #FFF;
-      border-radius: 3px;
-      padding: 1em 3em;
-      margin: 1em 0 0 0;
-      background: none;
-      cursor: pointer;
-      transition: background ease-in .25s;
-      &:hover {
-        background: rgba(255, 255, 255, 1);
-        color: #2B2D42;
-      }
-      &:before {
-        font-family: FontAwesome;
-        content: '\f07A';
-        color: #FFF;
-        position: absolute;
-        font-size: 1.5em;
-        margin: 0 -1.5em;
-      }
-      &:hover:before {
-        color: #2B2D42;
-      }
-    }
-  }
-  &_overlay {
-    background: rgba(255, 255, 255, 0.9);
+#row{
     width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    transform: translateY(-500px);
-    opacity: 0;
+    justify-content: flex-start;
     display: flex;
-    flex-flow: column wrap;
-    justify-content: center;
-    align-items: center;
-    h2 {
-      color: rgba(43, 45, 66, 0.7);
-      font-size: 1.2em;
-      margin: 1em 0;
+    flex-flow: row wrap;
+}
+//   E3E3D8
+  .wrapper{
+    width: 300px;
+    height: 500px;
+    background: white;
+    margin: auto;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px 10px 10px 10px;
+    box-shadow: 0;
+    transform: scale(0.95);
+    transition: box-shadow 0.5s, transform 0.5s;
+    &:hover{
+      transform: scale(1);
+      box-shadow: 5px 20px 30px rgba(103, 63, 120, 0.6);
     }
-    i {
-      color: rgba(43, 45, 66, 0.7);
-      font-size: 1.5em;
+    
+    .container{
+      width:100%;
+      height:100%;
+      .top{
+        height: 80%;
+        width:100%;
+        background: url(https://i.pinimg.com/564x/ee/c1/e5/eec1e5295e43ec293b8f3aabda6b3fea.jpg) no-repeat center center; 
+    -webkit-background-size: 100%;
+    -moz-background-size: 100%;
+    -o-background-size: 100%;
+    background-size: 100%;
+      }
+      .bottom{
+        width: 200%;
+        height: 20%;
+        transition: transform 0.5s;
+        &.clicked{
+          transform: translateX(-50%);
+        }
+        h1{
+            margin:0;
+            padding:0;
+        }
+        p{
+            margin:0;
+            padding:0;
+        }
+        .left{
+          height:100%;
+          width: 50%;
+          background: #f4f4f4;
+          position:relative;
+          float:left;
+          .details{
+            padding: 20px;
+            float: left;
+            width: calc(70% - 40px);
+          }
+          .buy{
+            display: flex;
+            float:right;
+            width: calc(30% - 2px);
+            height:100%;
+            background: #f1f1f1;
+            transition: background 0.5s;
+            border-left:solid thin rgba(0,0,0,0.1);
+            i{
+              font-size:30px;
+              padding:25px 30px;
+              color: black;
+              transition: transform 0.5s;
+            }
+            &:hover{
+              background: #796581;
+            }
+            &:hover i{
+              transform: translateY(2px);
+              color:white;
+            }
+          }
+        }
+        .right{
+          width: 50%;
+          background: #796581;
+          color: white;
+          float:right;
+          height:200%;
+          overflow: hidden;
+          .details{
+            padding: 20px;
+            float: right;
+            width: calc(70% - 40px);
+          }
+          .done{
+            display: flex;
+            width: calc(30% - 2px);
+            float:left;
+            transition: transform 0.5s;
+            border-right:solid thin rgba(255,255,255,0.3);
+            height:50%;
+            i{
+              font-size:30px;
+              padding:30px;
+              color: white;
+            }
+          }
+          .remove{
+            display: flex;
+            width: calc(30% - 1px);
+            clear: both;
+            border-right:solid thin rgba(255,255,255,0.3);
+            height:60%;
+            background: #BC3B59;
+            transition: transform 0.5s, background 0.5s;
+            &:hover{
+              background: #9B2847;
+            }
+            &:hover i{
+              padding-top: 30px;
+              transform: translateY(5px);
+            }
+            i{
+              transition: transform 0.5s;
+              font-size:30px;
+              padding:30px;
+              color: white;
+            }
+          }
+          &:hover{
+            .remove, .done{
+              transform: translateY(-100%);
+            }
+          }
+        }
+      }
+    }
+    
+    .inside{
+      z-index:9;
+      background: #796581;
+      width:140px;
+      height:140px;
+      position: absolute;
+      top: -70px;
+      right: -70px;
+      border-radius: 0px 0px 200px 200px;
+      transition: all 0.5s, border-radius 2s, top 1s;
+      overflow: hidden;
+      .icon{
+        position:absolute;
+        right:85px;
+        top:85px;
+        color:white;
+        opacity: 1;
+        overflow: hidden;
+      }
+      &:hover{
+        width:100%;
+        right:0;
+        top:0;
+        border-radius: 0;
+        height:80%;
+        .icon{
+          opacity: 0;
+          right:15px;
+          top:15px;
+        }
+        .contents{
+          display: block;
+          opacity: 1;
+          transform: scale(1);
+          transform: translateY(0);
+        }
+      }
+      .contents{
+        padding: 5%;
+        display: none;
+        transform: scale(0.5);
+        transform: translateY(-200%);
+        transition: opacity 0.2s, transform 0.8s;
+        table{
+          text-align:left;
+          width:100%;
+        }
+        h1, p, table{
+          color: white;
+        }
+        p{
+        //   font-size:13px;
+        }
+      }
     }
   }
-}
