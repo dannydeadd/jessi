@@ -2,7 +2,7 @@
 import React from 'react'
 import Image from 'next/image'
 import { useState } from 'react';
-import styled from 'styled-components';
+// import styled from 'styled-components';
 import "bootstrap-icons/font/bootstrap-icons.css";
 
 const Shop = () => {
